@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bannerRoute = void 0;
+const express_1 = require("express");
+const banner_controller_1 = require("./banner.controller.");
+const route = (0, express_1.Router)();
+route.post('/', banner_controller_1.bannerController.createBanner);
+route.get('/', banner_controller_1.bannerController.getAllBanner);
+route.get('/:bannerId', banner_controller_1.bannerController.getSingleBanner);
+route.patch('/:bannerId', banner_controller_1.bannerController.updateBanner);
+route.delete('/:bannerId', banner_controller_1.bannerController.deleteBanner);
+exports.bannerRoute = route;
